@@ -7,3 +7,6 @@
 img{
     height: 5cm;
 }
+.form-group{
+    justify-content: space-around;
+}

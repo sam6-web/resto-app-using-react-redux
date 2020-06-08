@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {getItemsFromApi} from '../actions/actionCreator'
 import './ContainerItems.css'
+import Modal from './Modal';
 class ContainerItems extends Component {
     componentDidMount() {
         this.props.getAll();
@@ -10,6 +11,7 @@ class ContainerItems extends Component {
         const {reducer} = this.props
         return (
             <div className='main' >
+                <Modal />
                 <div className="row">
                 {reducer.map((el) => (
                     <div className={'col-sm-4'}>
