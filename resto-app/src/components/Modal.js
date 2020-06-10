@@ -22,15 +22,14 @@ class Modal extends Component {
         this.setState({ingredient:e.target.value})
     }
     handleClickAdd = () =>{
-        const {postItem} = this.props
-            postItem (
-                                {
-                                    title : this.state.title,
-                                    img : this.state.img,
-                                    ingredient : this.state.ingredient
 
+            this.props.addItemsToApi (
+                                {
+                                    title:this.state.title,
+                                    img:this.state.img,
+                                    ingredient:this.state.ingredient
                                 }
-                            )
+                                )
     }
     
     render() {
@@ -39,7 +38,7 @@ class Modal extends Component {
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Ajouter</button>
 
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">New plat</h5>
@@ -50,15 +49,12 @@ class Modal extends Component {
                     <div class="modal-body">
                         <form>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">title:</label>
                             <input placeholder="title"onChange={this.handleChangeTitle}></input>
                         </div>
                         <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">image:</label>
                             <input placeholder='url Image' onChange={this.handleChangeImg}></input>
                         </div>
                         <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">ingredient:</label>
                             <input placeholder='description' onChange = {this.handleChangeIngredient}></input>
                         </div>
                         </form>
@@ -76,7 +72,7 @@ class Modal extends Component {
 }
 
 
-const mapDispatchToProps = (dispatch) => ({
+/* const mapDispatchToProps = (dispatch) => ({
     postItem: (res) => dispatch (addItemsToApi(res))
-})
-export default connect(null, mapDispatchToProps)(Modal)
+}) */
+export default connect(null, {addItemsToApi})(Modal)

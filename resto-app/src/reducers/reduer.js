@@ -1,4 +1,4 @@
-import {GETITEMS,ADDITEMS} from '../actions/types'
+import {GETITEMS,ADDITEMS,DELETEITEMS} from '../actions/types'
 const initisalState = {menu :[] } 
 
 const reducer = (state = initisalState , action)=>{
@@ -6,7 +6,10 @@ const reducer = (state = initisalState , action)=>{
         return action.payload
     }
     else if (action.type === ADDITEMS){
-        return action.payload
+        return [...state,action.payload]
+    }
+    else if (action.type === DELETEITEMS){
+        return [...state,action.payload]
     }
     return state.menu
 }

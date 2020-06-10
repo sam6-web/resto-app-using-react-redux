@@ -1,9 +1,9 @@
-import {GETITEMS,ADDITEMS} from './types'
+import {GETITEMS,ADDITEMS,DELETEITEMS} from './types'
 import Axios from 'axios'
 
 export const getAllItems = (payload) =>({
         type : GETITEMS,
-        payload : payload        
+        payload        
 });
 export function getItemsFromApi() {
     return (dispatch) =>
@@ -13,11 +13,22 @@ export function getItemsFromApi() {
 };
 export const addItems = (payload) =>({
     type : ADDITEMS,
-    payload : payload        
+    payload,        
 });
 export function addItemsToApi(res) {
-  return (dispatch) =>
-    Axios.post('http://localhost:8000/posts',res)
-          .then((res) =>dispatch(addItems(res))
-    );
+  return (dispatch) =>(
+        Axios.post('http://localhost:8000/posts',res)
+          .then((res) =>dispatch(addItems(res.data)))
+          );
 };
+
+export const deleteItem = (payload) =>({
+      type : DELETEITEMS,
+      payload,
+})
+export function deleteItemFromApi(res){
+      return (dispatch)=>(
+            Axios.delete(`http://localhost:8000/posts/${res}`)
+                  .then((res)=>dispatch(deleteItem(res.data)))
+      )
+}

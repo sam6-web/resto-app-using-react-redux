@@ -9,7 +9,7 @@ import {
 export class Navbar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-primary">                
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">                
                 
                 <a className="navbar-brand" href="#">Chez tati yosra</a>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">

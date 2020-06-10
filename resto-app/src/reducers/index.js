@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import reducer from './reduer'
+import menu from './reduer'
 
 const allReducers = combineReducers({
-    reducer: reducer
+    menu: menu
   });
   
 export default allReducers
