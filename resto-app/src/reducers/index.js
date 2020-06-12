@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import menu from './reduer'
+import reducer from './reduer'
+import authReducer from './reduer'
 
 const allReducers = combineReducers({
-    menu: menu
+    menu: reducer,
+    auth: authReducer
   });
   
-export default allReducers
+export default allReducers 

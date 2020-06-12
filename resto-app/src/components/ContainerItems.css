@@ -31,8 +31,14 @@ input {
 .signIn{
     display: flex;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 .deuxBtn{
     display: flex;
+}
+.in{
+    width: auto;
+}
+.bt{
+    margin-top: 10%;
 }

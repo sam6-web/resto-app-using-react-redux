@@ -14,11 +14,11 @@ function App() {
   return (
     <Router>
       <div className='container'>
-        {/* <SignInPage/> */}
+        
         <Navbar/>
         <Route exact path="/" component ={Home} />
         <Route path="/product" component ={ContainerItems} />
-
+        <Route path="/signup" component ={SignInPage} />
       </div>
     </Router>
    

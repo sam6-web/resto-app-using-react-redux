@@ -19,8 +19,11 @@ export class Navbar extends Component {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/product">product</Link>
-                    </li>
+                    </li>                                     
                     </ul>
+                    
+                        <Link className="nav-link" to="/signup">signup</Link>
+                    
                 </div>
             </nav>
         )

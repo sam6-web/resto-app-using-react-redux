@@ -2,7 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 export class Collapse extends Component {
+    constructor(props) {
+        super(props)
+                               
+    }         
     render() {
+        const{handleChangeId,handleChangeTitle,handleChangeImg,handleChangeIngredient,putItemFromApi,userData} = this.props
         return (
             <div>
                 <div class="accordion" id="accordionExample">
@@ -16,11 +21,14 @@ export class Collapse extends Component {
                     </div>
 
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body col-2">
-                        <input></input>
-                        <input></input>
-                        <input></input>
-                        <button class=" btn-primary">sauvgarder</button>
+                        <div class="card-body col-2">                            
+                        <input onChange={handleChangeId} placeholder='id'></input>
+                        <input onChange={handleChangeTitle} placeholder='title'></input>
+                        <input onChange={handleChangeImg} placeholder='image'></input>
+                        <input onChange={handleChangeIngredient} placeholder='igredient'></input>
+                        <button class=" btn-primary" onClick={()=> (putItemFromApi(userData.id))}>sauvgarder</button>
+
+                        
                         </div>
                     </div>
                     </div>

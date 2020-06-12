@@ -1,3 +1,6 @@
 export const GETITEMS = 'GETITEMS'
 export const ADDITEMS = 'ADDITEMS'
 export const DELETEITEMS = 'DELETE'
+export const PUTITEMS = 'PUTITEMS'
+export const GETUSER = 'GETUSER'
+export const ADDUSER = 'ADDUSER'

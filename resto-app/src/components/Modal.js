@@ -1,38 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {addItemsToApi} from '../actions/actionCreator'
 class Modal extends Component {
     constructor(props) {
         super(props)
     
-        this.state = {
-            title : "",
-            img : "",
-            ingredient : ""
-        }
+      
     }
-    handleChangeTitle =(e)=>{
-        this.setState({title:e.target.value})
-    }
-    handleChangeImg =(e)=>{
-        this.setState({img:e.target.value})
-
-    }
-    handleChangeIngredient =(e)=>{
-        this.setState({ingredient:e.target.value})
-    }
-    handleClickAdd = () =>{
-
-            this.props.addItemsToApi (
-                                {
-                                    title:this.state.title,
-                                    img:this.state.img,
-                                    ingredient:this.state.ingredient
-                                }
-                                )
-    }
+   
     
     render() {
+        const{handleChangeImg,handleChangeIngredient,handleChangeTitle,handleClickAdd}=this.props
         return (
             <div>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Ajouter</button>
@@ -49,19 +26,19 @@ class Modal extends Component {
                     <div class="modal-body">
                         <form>
                         <div class="form-group">
-                            <input placeholder="title"onChange={this.handleChangeTitle}></input>
+                            <input placeholder="title"onChange={handleChangeTitle}></input>
                         </div>
                         <div class="form-group">
-                            <input placeholder='url Image' onChange={this.handleChangeImg}></input>
+                            <input placeholder='url Image' onChange={handleChangeImg}></input>
                         </div>
                         <div class="form-group">
-                            <input placeholder='description' onChange = {this.handleChangeIngredient}></input>
+                            <input placeholder='description' onChange={handleChangeIngredient}></input>
                         </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onClick={this.handleClickAdd}>Ajouter</button>
+                        <button type="button" class="btn btn-primary" onClick={handleClickAdd}>Ajouter</button>
                     </div>
                     </div>
                 </div>
@@ -71,8 +48,4 @@ class Modal extends Component {
     }
 }
 
-
-/* const mapDispatchToProps = (dispatch) => ({
-    postItem: (res) => dispatch (addItemsToApi(res))
-}) */
-export default connect(null, {addItemsToApi})(Modal)
+export default connect(null,null)(Modal)
