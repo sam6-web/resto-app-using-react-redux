@@ -48,19 +48,33 @@
       "Ingrédients": "Pâte: 200 gr Semoule Fine150  gr Farine3 C à Soupe Huile1 C à Soupe Sel1/2 Verre Eau tiède",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRIwvZBX3a0uStGbfD0b5XBs0o3veaIve0hUB1gXfZ0Ba1ibzKl&usqp=CAU",
       "prix": 15
-    },
-    {
-      "title": "abdallah",
-      "img": "",
-      "Ingrédients": "aaaaa",
-      "id": 8
     }
   ],
   "comments": [
     {
       "email": "abdallahmrad.simplon@gmail.com",
-      "password": "azerty",
+      "password": "zzzz",
       "id": 1
+    },
+    {
+      "email": "abdallahmrad.simplon@gmail.com",
+      "password": "QQ",
+      "id": 2
+    },
+    {
+      "email": "abdallahmrad.simplon@gmail.com",
+      "password": "0",
+      "id": 3
+    },
+    {
+      "email": "super-armouti@hotmail.fr",
+      "password": "0000",
+      "id": 4
+    },
+    {
+      "email": "sdfsdfsdf@g.s",
+      "password": "s",
+      "id": 5
     }
   ],
   "profile": {

@@ -3,7 +3,8 @@ import {
       ADDITEMS,
       DELETEITEMS,
       PUTITEMS,
-      ADDUSER,      
+      ADDUSER,
+      GETUSER,      
       } from './types'
 
 import Axios from 'axios'
@@ -49,6 +50,16 @@ export const putItemFromApi =(res)=>{
                   .then((res)=>dispatch(putItems(res.data)))
       )
 }
+export const getAllUser = (payload) =>({
+      type : GETUSER,
+      payload        
+});
+export const getUserFromApi=()=> {
+  return (dispatch) =>
+    Axios.get('http://localhost:8000/comment')
+          .then((res) =>dispatch(getAllUser(res.data))
+    );
+};
 export const addUser = (payload)=>({
       type : ADDUSER,
       payload

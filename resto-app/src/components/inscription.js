@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {postUserToApi} from '../actions/actionCreator'
 
 
-export class SignInPage extends Component {
+export class SigninPage extends Component {
     constructor(props) {
         super(props)
     
@@ -11,6 +11,7 @@ export class SignInPage extends Component {
              email :"",
              password :""
         }
+       
     }
     handleChangeEmail=(e)=>{
         this.setState({
@@ -27,9 +28,12 @@ export class SignInPage extends Component {
     handleClickSignUp=(e)=>{
         
         this.props.postUserToApi(this.state)
+        this.props.history.push('/connx')
+
         console.log(this.state)
         
     }
+    
     
     
     
@@ -44,7 +48,8 @@ export class SignInPage extends Component {
                         <input
                         onChange={this.handleChangeEmail}
                         name="email"
-                        type="email" value={this.state.email}
+                        type="email"
+                        value={this.state.email}
                         id="inputEmail" class="form-control"
                         placeholder="Email address"
                         required autofocus/>
@@ -61,9 +66,9 @@ export class SignInPage extends Component {
                         placeholder="Password"
                         required/>
                     </div>
-                    <button  class="btn bt btn-lg btn-primary btn-block col-12" type="submit">Sign in</button>
+                    <button  class="btn bt btn-lg btn-primary btn-block col-12" type="submit">inscription</button>
                     <p class="mt-5 mb-3 text-muted text-center">&copy;2020</p>
-                    
+
                 </form>
 
             </div>
@@ -78,5 +83,5 @@ const mapStateToProps = (state) => {
     
 })
 
-export default connect(mapStateToProps, {postUserToApi})( SignInPage)
+export default connect(mapStateToProps, {postUserToApi})( SigninPage)
 

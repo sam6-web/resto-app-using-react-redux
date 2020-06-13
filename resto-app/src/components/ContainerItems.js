@@ -44,11 +44,13 @@ import Modal from './Modal';
         return (
             <div className='main' >   
 
+                <div className='deuxBtn'>
                 <Modal  handleChangeImg = {this.handleChangeImg}
                         handleChangeTitle = {this.handleChangeTitle}
                         handleChangeIngredient ={this.handleChangeIngredient}
                         handleClickAdd ={this.handleClickAdd} />
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Modifier</button>                    
+                </div>
 
                 <div className="row">
                 {menu.map((el,i) => (

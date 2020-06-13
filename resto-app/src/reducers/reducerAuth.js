@@ -4,7 +4,7 @@ const initialeState = {auth : []}
 
 const authReducer = (state = initialeState,action)=>{
     if (action.type === GETUSER) {
-        return [...state]
+        return action.payload
     }
     else if(action.type === ADDUSER){
         return [...state,action.payload]

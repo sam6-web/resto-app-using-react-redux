@@ -14,9 +14,9 @@ const reducer = (state = initisalState , action)=>{
     else if (action.type === PUTITEMS){
         return [...state,action.payload]
     }
-    if(action.type === ADDUSER){
+    /* if(action.type === ADDUSER){
         return [...state,action.payload]
-    }
+    } */
     return state.menu
     
 
