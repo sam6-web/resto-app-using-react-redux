@@ -63,6 +63,18 @@
       "password": "s",
       "role": "user",
       "id": 1
+    },
+    {
+      "email": "abdallahmrad.simplon@gmail.com",
+      "password": "rihem",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "email": "abdallahmrad.simplon@gmail.com",
+      "password": "s",
+      "role": "user",
+      "id": 3
     }
   ],
   "profile": []

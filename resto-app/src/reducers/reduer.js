@@ -1,4 +1,4 @@
-import {GETITEMS,ADDITEMS,DELETEITEMS,PUTITEMS,ADDUSER,GETCMD,ADDCMD,DELETECMD} from '../actions/types'
+import {GETITEMS,ADDITEMS,DELETEITEMS,PUTITEMS,ADDUSER,GETCMD,ADDCMD,DELETECMD, GETUSER} from '../actions/types'
 const initisalState = {menu :[],auth:[],panier:[]} 
 
 const reducer = (state = initisalState , action)=>{
@@ -17,6 +17,9 @@ const reducer = (state = initisalState , action)=>{
     else if(action.type === ADDUSER){
         return [...state,action.payload]
     }
+    else if(action.type === GETUSER){
+        return [...state,action.payload]
+    }
     else if (action.type === GETCMD) {
         return action.payload
     }
@@ -26,7 +29,7 @@ const reducer = (state = initisalState , action)=>{
     else if (action.type === DELETECMD){
         return [...state,action.payload]
     }
-    return state.menu,state.auth,state.panier
+    return state.menu
     
 
 }

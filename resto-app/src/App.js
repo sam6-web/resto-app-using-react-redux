@@ -20,11 +20,11 @@ export class App extends Component {
     super(props)
   
     this.state = {
-          
+      shPlat : false
     }
   }
 
-  
+  showPlat = ()=>{this.setState({shPlat:this.state.shPlat=true})}
   
   render() {
 
@@ -33,7 +33,7 @@ export class App extends Component {
       <Router>
       <div className='container'>
         
-        <Navbar/>
+        <Navbar shPlat={this.state.shPlat} />
         <Switch>
         <Route exact path="/" component ={Home} />
         <Route path="/product" component ={ContainerItems} />
@@ -41,7 +41,7 @@ export class App extends Component {
         <Route path='/client'  >
         <ProductForUser/>
         </Route>
-        <Route path="/connx" component={connexion} />        
+        <Route path="/connx" showPlat={this.showPlat} component={connexion} />        
         <Route path="/inscrit" component ={Inscription} />
         </Switch>
       </div>

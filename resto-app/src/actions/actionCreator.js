@@ -6,11 +6,12 @@ import {
       ADDUSER,
       GETCMD,
       ADDCMD,
-      DELETECMD      
+      DELETECMD,
+      GETUSER      
       } from './types'
 
 import Axios from 'axios'
-/* ======== */
+/* ========menu====== */
 export const getAllItems = (payload) =>({
         type : GETITEMS,
         payload        
@@ -52,7 +53,9 @@ export const putItemFromApi =(res)=>{
                   .then((res)=>dispatch(putItems(res.data)),window.location.reload(true))
       )
 }
-/* export const getAllUser = (payload) =>({
+/* =========fin menu================ */
+/* =========authentification======== */
+export const getAllUser = (payload) =>({
       type : GETUSER,
       payload        
 });
@@ -61,7 +64,7 @@ export const getUserFromApi=()=> {
     Axios.get('http://localhost:8000/comments')
           .then((res) =>dispatch(getAllUser(res.data))
     );
-}; */
+};
 export const addUser = (payload)=>({
       type : ADDUSER,
       payload
@@ -73,6 +76,7 @@ export const postUserToApi = (res) =>{
               .then((res) =>dispatch(addUser(res.data)))
               );
 }
+/* ========fin authentification========= */
 
 /* =========pour panier======= */
 export const getAllCommande = (payload) =>({
@@ -106,3 +110,4 @@ export const deleteCommandFromApi=(res)=>{
                   .then((res)=>dispatch(deleteCommand(res.data)),window.location.reload(true))
       )
 }
+/* =======fin panier */

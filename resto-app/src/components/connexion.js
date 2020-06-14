@@ -27,14 +27,20 @@ export class Connexion extends Component {
     }
     handleClickConx=()=>{
         
-        this.props.history.push('/product')
+        this.props.history.push('/client')
 
-        console.log(this.state)
+        alert('ddd')
         
     }
-   
+    componentDidMount= ()=>{
+        this.props.getUserFromApi()
+         console.log(this.props.getUserFromApi())
+        
+    }
+    
    
     render() {
+        const{showPlat}=this.props
         return (
             <div className='signIn'>
                 <form onSubmit={this.handleClickConx} class="form-signin col-4">
@@ -51,6 +57,8 @@ export class Connexion extends Component {
                     </div>
                     <div class="form-label-group col-12">
                         <label for="inputPassword">Password</label>
+                        {this.props.menu.map(el=>( <div> {el.email} </div> ))}
+
                         <input
                         type="password"
                         name="passwordConx"
@@ -72,9 +80,9 @@ export class Connexion extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { auth: state.auth};
+    return {menu : state.menu};
 };
 
 
 
-export default connect(mapStateToProps,null)(Connexion)
+export default connect(mapStateToProps,{getUserFromApi})(Connexion)
