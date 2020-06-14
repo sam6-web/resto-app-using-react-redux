@@ -9,7 +9,8 @@ export class SigninPage extends Component {
     
         this.state = {
              email :"",
-             password :""
+             password :"",
+             role: "user"
         }
        
     }
@@ -33,11 +34,7 @@ export class SigninPage extends Component {
         console.log(this.state)
         
     }
-    
-    
-    
-    
-    
+        
     render() {
         
         return (
@@ -77,11 +74,11 @@ export class SigninPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {auth : state.auth}
+    return {menu : state.menu}
 };
   const mapDispatchToProps = (dispatch) => ({
     
 })
 
-export default connect(mapStateToProps, {postUserToApi})( SigninPage)
+export default connect(null, {postUserToApi})( SigninPage)
 

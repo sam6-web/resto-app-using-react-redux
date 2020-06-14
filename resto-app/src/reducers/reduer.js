@@ -1,5 +1,5 @@
-import {GETITEMS,ADDITEMS,DELETEITEMS,PUTITEMS,ADDUSER} from '../actions/types'
-const initisalState = {menu :[],auth : []} 
+import {GETITEMS,ADDITEMS,DELETEITEMS,PUTITEMS,ADDUSER,GETCMD,ADDCMD,DELETECMD} from '../actions/types'
+const initisalState = {menu :[],auth:[],panier:[]} 
 
 const reducer = (state = initisalState , action)=>{
     if (action.type === GETITEMS) {
@@ -14,10 +14,19 @@ const reducer = (state = initisalState , action)=>{
     else if (action.type === PUTITEMS){
         return [...state,action.payload]
     }
-    /* if(action.type === ADDUSER){
+    else if(action.type === ADDUSER){
         return [...state,action.payload]
-    } */
-    return state.menu
+    }
+    else if (action.type === GETCMD) {
+        return action.payload
+    }
+    else if (action.type === ADDCMD) {
+        return [...state,action.payload]
+    }
+    else if (action.type === DELETECMD){
+        return [...state,action.payload]
+    }
+    return state.menu,state.auth,state.panier
     
 
 }

@@ -1,14 +1,11 @@
-import {GETUSER,ADDUSER} from '../actions/types'
+/* import {ADDUSER} from '../actions/types'
 
-const initialeState = {auth : []}
+const initialeState = {authReducer : []}
 
 const authReducer = (state = initialeState,action)=>{
-    if (action.type === GETUSER) {
-        return action.payload
-    }
-    else if(action.type === ADDUSER){
+     if(action.type === ADDUSER){
         return [...state,action.payload]
-    }
-    return state.auth
+    } 
+    return state.authReducer
 }
-export default authReducer
+export default authReducer */

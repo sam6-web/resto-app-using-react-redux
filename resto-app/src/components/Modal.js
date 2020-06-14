@@ -9,7 +9,7 @@ class Modal extends Component {
    
     
     render() {
-        const{handleChangeImg,handleChangeIngredient,handleChangeTitle,handleClickAdd}=this.props
+        const{handleChangeImg,handleChangeIngredient,handleChangeTitle,handleClickAdd,handleChangequantity,handleChangePrix}=this.props
         return (
             <div>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Ajouter</button>
@@ -33,6 +33,12 @@ class Modal extends Component {
                         </div>
                         <div class="form-group">
                             <input placeholder='description' onChange={handleChangeIngredient}></input>
+                        </div>
+                        <div class="form-group">
+                            <input placeholder='quantity' onChange={handleChangequantity}></input>
+                        </div>
+                        <div class="form-group">
+                            <input placeholder='prix' onChange={handleChangePrix}></input>
                         </div>
                         </form>
                     </div>

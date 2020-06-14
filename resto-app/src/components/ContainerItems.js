@@ -10,7 +10,9 @@ import Modal from './Modal';
             
             title: "",
             img: "",
-            Ingrédients: ""                        
+            Ingrédients: "",
+            quantity : "",
+            prix :""                       
         }
         
     }
@@ -18,6 +20,10 @@ import Modal from './Modal';
     handleChangeTitle =(e)=>{
         this.setState({title:e.target.value})
         console.log(this.state.title)
+    }
+    handleChangePrix =(e)=>{
+        this.setState({prix:e.target.value})
+        console.log(this.state.prix)
     }   
     handleChangeImg =(e)=>{
        this.setState({img:e.target.value})
@@ -27,17 +33,21 @@ import Modal from './Modal';
         this.setState({Ingrédients:e.target.value})
         console.log(this.state.Ingrédients)
     }
+    handleChangequantity =(e)=>{
+        this.setState({quantity:e.target.value})
+        console.log(this.state.quantity)
+    }
+
     handleClickAdd = () =>{
 
             this.props.addItemsToApi (this.state)
     }
-    handleClickPut = () =>{
-            this.props.putItemFromApi(this.state);
-    } 
+    
 
     componentDidMount =()=> {
         this.props.getItemsFromApi();
     }
+
     
     render() {
         const {menu,deleteItemFromApi,putItemFromApi} = this.props
@@ -48,9 +58,12 @@ import Modal from './Modal';
                 <Modal  handleChangeImg = {this.handleChangeImg}
                         handleChangeTitle = {this.handleChangeTitle}
                         handleChangeIngredient ={this.handleChangeIngredient}
-                        handleClickAdd ={this.handleClickAdd} />
+                        handleClickAdd ={this.handleClickAdd}
+                        handleChangequantity={this.handleChangequantity}
+                        handleChangePrix ={this.handleChangePrix} />
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Modifier</button>                    
                 </div>
+                
 
                 <div className="row">
                 {menu.map((el,i) => (
@@ -71,7 +84,7 @@ import Modal from './Modal';
                                 <input className='in'                                
                                 onChange={this.handleChangeImg}>
                                 </input>
-                                <button onClick = {()=>{putItemFromApi(menu[i].id)}}
+                                <button onClick = {()=>{putItemFromApi(el.id,this.state)}}
                                 class="btn btn-primary">sauvgarder</button>   
                                 </div>
                                 </div>
@@ -80,6 +93,7 @@ import Modal from './Modal';
                             <div class="card-body">
                                 <h5 class="card-title">{el.id}:  {el.title}</h5>
                                 <h6> prix: {el.prix} dinars</h6>
+                                <h6> quantity: {el.quantity}</h6>
                                 <p class="card-text"> {el.Ingrédients} </p>
                                 <div >
                                 <button onClick = {()=>{deleteItemFromApi(menu[i].id)}}

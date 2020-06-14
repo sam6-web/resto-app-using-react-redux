@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import IconPanier from './IconPanier'
 import {
     BrowserRouter as Router,
     Switch,
@@ -8,26 +9,29 @@ import {
 
 export class Navbar extends Component {
     render() {
-        const {showProduct}=this.props
+        
 
         return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-primary">                
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">                
                 
-                <a className="navbar-brand" href="#">Chez tati yosra</a>
+                <a className="navbar-brand" href="#">Chez</a>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
                         <Link className="nav-link " to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        {showProduct?<Link className="nav-link" to="/product">product</Link>:
-                                                <Link >ss</Link>
-                                            }
-                    </li>                                     
+                        <Link className="nav-link" to="/product">product</Link>                                            
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/client">achter</Link>                                            
+                    </li>
+                                                      
                     </ul>
-                    
-                        <Link className="nav-link bg-dark" to="/inscrit">inscription</Link>
-                        <Link className="nav-link  bg-dark" to="/connx">connexion</Link>
+                        <Link className="nav-link" to="/inscrit">inscription</Link>
+                        <Link className="nav-link" to="/connx">connexion</Link>
+                        <IconPanier />   
+
 
                     
                 </div>

@@ -1,0 +1,9 @@
+.icon i {
+    font-size: 24px;
+    color : black
+}
+.icon span {
+    position: absolute ;
+    top:5px;
+    right:5px; 
+}

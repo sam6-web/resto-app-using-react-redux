@@ -11,32 +11,39 @@ import  ContainerItems  from './components/ContainerItems';
 import Home from './components/Home'
 import Inscription from './components/inscription';
 import Connexion from './components/connexion';
+import Panier from './components/Panier'
+import ProductForUser from './components/ProductForUser'
+import connexion from './components/connexion';
 
 export class App extends Component {
   constructor(props) {
     super(props)
   
     this.state = {
-       showProduct : false
+          
     }
   }
+
   
-  shProduct = () =>{
-    this.setState({showProduct:true})
-  }
   
   render() {
+
     return (
+      
       <Router>
       <div className='container'>
         
-        <Navbar showProduct = {this.state.showProduct}/>
+        <Navbar/>
+        <Switch>
         <Route exact path="/" component ={Home} />
         <Route path="/product" component ={ContainerItems} />
-        <Route path="/connx">
-        <Connexion shProduct={this.shProduct}/>
+        <Route path="/panier" component ={Panier} />
+        <Route path='/client'  >
+        <ProductForUser/>
         </Route>
+        <Route path="/connx" component={connexion} />        
         <Route path="/inscrit" component ={Inscription} />
+        </Switch>
       </div>
     </Router>
     )
