@@ -30,6 +30,7 @@ export class SigninPage extends Component {
         
         this.props.postUserToApi(this.state)
         this.props.history.push('/connx')
+        console.log('ssss',this.props)
 
         console.log(this.state)
         

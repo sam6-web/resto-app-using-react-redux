@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
-import IconPanier from './IconPanier'
+import IconPanier from'./IconPanier'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
+    
     Link
   } from "react-router-dom";
 
 export class Navbar extends Component {
     render() {
-        const{shPlat } = this.props
+        const{shPlat,shProduct } = this.props
 
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">                
@@ -21,7 +19,7 @@ export class Navbar extends Component {
                         <Link className="nav-link " to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/product">product</Link>                                            
+                        {shProduct?<Link className="nav-link" to="/product">product</Link>:<div></div>}                                          
                     </li>
                     <li className="nav-item">
                         {shPlat?<Link className="nav-link" to="/client">nos plat</Link>:<div></div> }                                           
@@ -30,7 +28,10 @@ export class Navbar extends Component {
                     </ul>
                         <Link className="nav-link" to="/inscrit">inscription</Link>
                         <Link className="nav-link" to="/connx">connexion</Link>
-                        <IconPanier />   
+
+                        <div>
+                        <IconPanier /> 
+                        </div>  
 
 
                     

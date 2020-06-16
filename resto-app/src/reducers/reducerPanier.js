@@ -1,5 +1,5 @@
-/* import {GETCMD,ADDCMD,DELETECMD} from '../actions/types'
-const initisalState = {panierReducer :[]} 
+import {GETCMD,ADDCMD,DELETECMD} from '../actions/types'
+const initisalState = []
 
 const panierReducer = (state = initisalState , action)=>{
     if (action.type === GETCMD) {
@@ -13,10 +13,10 @@ const panierReducer = (state = initisalState , action)=>{
     }
     
     
-    return state.panierReducer
+    return state
     
 
 }
 
 
-export default panierReducer */
+export default panierReducer

@@ -10,22 +10,23 @@ export class IconPanier extends Component {
    
     
     render(props) {
-        const {totalQuantity} = this.props 
             return (
-            <div className='icon'>
-                <Link to='/panier'>
-                <i className='fa fa-shopping-cart'></i>
-                </Link>              
-            </div>
+                <div>
+
+                    <div className='icon'>                           
+                        <Link to='/panier'>                    
+                        <i className='fa fa-shopping-cart'></i>
+                        </Link>
+                    </div>
+                </div>
+            
         ) 
     }
 }
 
 
 const mapStateToProps = (state) => { 
-    return{
-       
-    }
+    
 }
 
 const mapDispatchToProps = {

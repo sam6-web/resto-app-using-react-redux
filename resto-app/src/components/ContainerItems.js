@@ -84,7 +84,7 @@ import Modal from './Modal';
                                 <input className='in'                                
                                 onChange={this.handleChangeImg}>
                                 </input>
-                                <button onClick = {()=>{putItemFromApi(el.id,this.state)}}
+                                <button onClick = {()=>{putItemFromApi(menu[i])}}
                                 class="btn btn-primary">sauvgarder</button>   
                                 </div>
                                 </div>

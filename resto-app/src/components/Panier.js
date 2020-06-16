@@ -35,19 +35,14 @@ import { IconPanier } from './IconPanier'
                             <img src={el.img}  class="card-img-top" alt="..."/>                            
                             <div class="card-body">
                                 <h5 class="card-title">{el.id}:  {el.title}</h5>
-                                <h6> prix: {el.prix} dinars</h6>
-                                <br/>
-                                Quantity:1
-                                <br/>
-                                totale : {el.prix}
-                                
+                                <h6> prix: {el.prix} dinars</h6>                                
+                                totale : {el.prix}                                
                                 <div >
                                 <button onClick={()=>deleteCommandFromApi(panier[i].id)}
                                 class="btn btn-primary">
                                     <i className='fa fa-trash'></i>
                                 supprimer
-                                </button>                               
-                                                                                                                                                                                       
+                                </button>                                                                                                                                                                                                                      
                                 </div>                                
                             </div>
                         </div>
@@ -66,9 +61,10 @@ import { IconPanier } from './IconPanier'
 }
 
 const mapStateToProps = (state) => {
-    return { panier: state.menu,
-        totalQuantity : state.menu.reduce((total,item)=>total+item.quantity,0),
-        total : state.menu.reduce((total,item)=>total+item.quantity*item.prix,0)};
+    return {
+        panier: state.panier,
+        totalQuantity : state.panier.reduce((total,item)=>total+item.quantity,0),
+        total : state.panier.reduce((total,item)=>total+item.quantity*item.prix,0)};
 
   };
 

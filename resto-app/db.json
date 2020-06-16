@@ -5,7 +5,7 @@
       "title": "Ojja",
       "Ingrédients": "Pâte: 200 gr Semoule Fine150  gr Farine3 C à Soupe Huile1 C à Soupe Sel1/2 Verre Eau tiède",
       "img": "https://www.mesinspirationsculinaires.com/wp-content/uploads/2018/08/ojja-tunisienne-aux-merguez-1.jpg",
-      "prix": 15,
+      "prix": 150,
       "quantity": 1
     },
     {
@@ -13,7 +13,7 @@
       "title": "Brique danouni",
       "Ingrédients": "Pâte: 200 gr Semoule Fine150  gr Farine3 C à Soupe Huile1 C à Soupe Sel1/2 Verre Eau tiède",
       "img": "https://www.treatshomemade.com/fr/recipes/brik-danouni/featured_1.jpg",
-      "prix": 15,
+      "prix": 105,
       "quantity": 1
     },
     {
@@ -21,7 +21,7 @@
       "title": "Kafteji",
       "Ingrédients": "Pâte: 200 gr Semoule Fine150  gr Farine3 C à Soupe Huile1 C à Soupe Sel1/2 Verre Eau tiède",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0yW81Gb43MgRsqJ9SqzJEBIy04Y-mQ_rBRLrvfFpuNnJayqOf&usqp=CAU",
-      "prix": 15,
+      "prix": 75,
       "quantity": 1
     },
     {
@@ -37,7 +37,7 @@
       "title": "Pizza",
       "Ingrédients": "Pâte: 200 gr Semoule Fine150  gr Farine3 C à Soupe Huile1 C à Soupe Sel1/2 Verre Eau tiède",
       "img": "https://blog.sandwichshows.com/wp-content/uploads/2019/07/prix-de-revient-d-une-pizza.jpg",
-      "prix": 15,
+      "prix": 5,
       "quantity": 1
     },
     {
@@ -45,7 +45,7 @@
       "title": "Putanesca",
       "Ingrédients": "Pâte: 200 gr Semoule Fine150  gr Farine3 C à Soupe Huile1 C à Soupe Sel1/2 Verre Eau tiède",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQpewSi28srSI82rSEPN1JyGSOtLQiJQzgLg7KYazEryeKIoQ2V&usqp=CAU",
-      "prix": 15,
+      "prix": 55,
       "quantity": 1
     },
     {
@@ -53,28 +53,16 @@
       "title": "Rouz",
       "Ingrédients": "Pâte: 200 gr Semoule Fine150  gr Farine3 C à Soupe Huile1 C à Soupe Sel1/2 Verre Eau tiède",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRIwvZBX3a0uStGbfD0b5XBs0o3veaIve0hUB1gXfZ0Ba1ibzKl&usqp=CAU",
-      "prix": 15,
+      "prix": 75,
       "quantity": 1
     }
   ],
   "comments": [
     {
       "email": "abdallahmrad.simplon@gmail.com",
-      "password": "s",
+      "password": "1234",
       "role": "user",
       "id": 1
-    },
-    {
-      "email": "abdallahmrad.simplon@gmail.com",
-      "password": "rihem",
-      "role": "user",
-      "id": 2
-    },
-    {
-      "email": "abdallahmrad.simplon@gmail.com",
-      "password": "s",
-      "role": "user",
-      "id": 3
     }
   ],
   "profile": []

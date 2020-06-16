@@ -49,7 +49,7 @@ export const putItems = (payload) =>({
 })
 export const putItemFromApi =(res)=>{
       return(dispatch)=>(
-            Axios.put(`http://localhost:8000/posts/${res}`,{res})
+            Axios.patch(`http://localhost:8000/posts/${res}`,{res})
                   .then((res)=>dispatch(putItems(res.data)),window.location.reload(true))
       )
 }
@@ -61,9 +61,12 @@ export const getAllUser = (payload) =>({
 });
 export const getUserFromApi=()=> {
   return (dispatch) =>
-    Axios.get('http://localhost:8000/comments')
-          .then((res) =>dispatch(getAllUser(res.data))
-    );
+  Axios.get('http://localhost:8000/comments')
+        .then((res) =>{dispatch(getAllUser(res.data))
+        console.log('ici get user donners',res.data)}
+  );
+
+
 };
 export const addUser = (payload)=>({
       type : ADDUSER,

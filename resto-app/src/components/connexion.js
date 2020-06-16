@@ -26,18 +26,14 @@ export class Connexion extends Component {
         console.log(this.state.passwordConx)
     }
     handleClickConx=()=>{
-        
-        this.props.history.push('/client')
+         const x = this.props.users.filter(el => (el.email === this.state.emailConx)&&(el.password===this.state.passwordConx) )
+         x.map(el => el.email === this.state.emailConx && el.password=== this.state.passwordConx  ? this.props.history.push('/client'):alert("inscrvez-vous"))
 
-        alert('ddd')
-        
+                 
     }
     componentDidMount= ()=>{
-        this.props.getUserFromApi()
-         console.log(this.props.getUserFromApi())
-        
-    }
-    
+        this.props.getusers()
+        }
    
     render() {
         const{showPlat}=this.props
@@ -69,7 +65,7 @@ export class Connexion extends Component {
                         placeholder="Password"
                         required/>
                     </div>
-                    <button  class="btn bt btn-lg btn-primary btn-block col-12" type="submit">connexion</button>
+                    <button onClick={showPlat} class="btn bt btn-lg btn-primary btn-block col-12" type="submit">connexion</button>
                     <p class="mt-5 mb-3 text-muted text-center">&copy;2020</p>
 
                 </form>
@@ -79,10 +75,12 @@ export class Connexion extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {menu : state.menu};
-};
+const mapStateToProps = (state) => ({
+    menu:state.menu,
+     users:state.users,
+});
+const mapDispatchToProps = (dispatch)=>({
+    getusers: () => dispatch(getUserFromApi())
+})
 
-
-
-export default connect(mapStateToProps,{getUserFromApi})(Connexion)
+export default connect(mapStateToProps,mapDispatchToProps)(Connexion)
